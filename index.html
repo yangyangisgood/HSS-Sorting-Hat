@@ -2,14 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>sortin hat</title>
+  <title>sorting hat</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
-    <h1>測驗你適合的主副修</h1>
-    <div id="quiz"></div>
-    <div id="result"></div>
+    <!-- 首頁 -->
+    <div id="start-screen">
+      <h1>sorting hat</h1>
+      <p>讓分類帽幫你選出最適合你的主修與副修吧！</p>
+      <button onclick="startQuiz()">開始遊戲</button>
+    </div>
+
+    <!-- 題目區 -->
+    <div id="quiz-screen" class="hidden">
+      <div id="quiz"></div>
+      <button onclick="prevQuestion()" id="prevBtn">⬅️ 上一題</button>
+      <div id="progress-bar"><div id="progress-fill"></div></div>
+    </div>
+
+    <!-- 結果區 -->
+    <div id="result" class="hidden"></div>
   </div>
 
   <script src="app.js"></script>

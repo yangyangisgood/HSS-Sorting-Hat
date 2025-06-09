@@ -10,8 +10,7 @@ body {
 }
 
 button { 
-    display: block; 
-    margin: 0.5em 0; 
+    margin: 0.5em 0.25em; 
     padding: 0.5em 1em; 
 }
 
@@ -19,4 +18,24 @@ button {
     font-size: 1.2em; 
     font-weight: bold; 
     color: #4a148c; 
+}
+
+.hidden { 
+    display: none; 
+}
+
+#progress-bar { 
+    width: 100%; 
+    background: #eee; 
+    height: 20px; 
+    border-radius: 10px; 
+    margin-top: 1em; 
+}
+
+#progress-fill { 
+    background: #4caf50; 
+    height: 100%; 
+    width: 0%; 
+    border-radius: 10px; 
+    transition: width 0.3s; 
 }
