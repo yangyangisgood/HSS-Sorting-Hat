@@ -11,7 +11,7 @@ const subjectDisplay = {
 };
 
 const subjects = Object.keys(subjectDisplay);
-const majorEligible = ["sociology", "anthropology", "philosophy", "history", "literature", "politics"];
+// const majorEligible = ["sociology", "anthropology", "philosophy", "history", "literature", "politics"];
 
 const subjectScores = {};
 subjects.forEach(s => subjectScores[s] = 0);
@@ -99,17 +99,18 @@ function showResult() {
   const sorted = Object.entries(subjectScores)
     .sort((a, b) => b[1] - a[1]);
 
-  let major = null, minor = null;
-  for (const [subject] of sorted) {
-    if (!major && majorEligible.includes(subject)) major = subject;
-    else if (!minor) minor = subject;
-    if (major && minor) break;
-  }
+  const [topSubject, topScore] = sorted[0];
+
+  // let major = null, minor = null;
+  // for (const [subject] of sorted) {
+  //   if (!major && majorEligible.includes(subject)) major = subject;
+  //   else if (!minor) minor = subject;
+  //   if (major && minor) break;
+  // }
 
   resultEl.innerHTML = `
     <p>🎓 測驗完成！<br>
-    ✨主修：<strong>${subjectDisplay[major]}</strong><br>
-    🌟副修：<strong>${subjectDisplay[minor]}</strong></p>
+    ✨你的代表學程是：<strong>${subjectDisplay[topSubject]}</strong><br>
     <button onclick="restart()">重新測驗</button>
   `;
 }
