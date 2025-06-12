@@ -3,31 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>sorting hat</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet" >
+
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Noto+Sans+TC&display=swap" rel="stylesheet">
 
 </head>
 <body>
-  <div id="app">
+  <div id="app" class="text-center p-4">
     <!-- 首頁 -->
-    <div id="start-screen">
-      <h1>HSS sorting hat</h1>
-      <p>親愛的同學，歡迎來到人社華茲。這裡有九個學程等待你們加入。</p>
-      <p>別急，分類帽會給你們指引。</p>
-      <p>你唯一需要做的就是聆聽內心的聲音，誠實地與分類帽對話。</p>
-      <button onclick="startQuiz()">開始對話</button>
+    <div id="start-screen"  class="text-center fade-in">
+      <h1 class="fs-2 fw-bold text-purple mb-3">HSS sorting hat</h1>
+      <p class="mb-4">親愛的同學，歡迎來到人社華茲。這裡有九個學程等待你們加入。</p>
+      <p class="mb-4">別急，分類帽會給你們指引。</p>
+      <p class="mb-4">你唯一需要做的就是聆聽內心的聲音，誠實地與分類帽對話。</p>
+      <button onclick="startQuiz()" class="btn btn-primary">開始對話</button>
     </div>
 
     <!-- 題目區 -->
-    <div id="quiz-screen" class="hidden">
-      <div id="quiz"></div>
-      <button onclick="prevQuestion()" id="prevBtn">⬅上一題</button>
-      <div id="progress-bar"><div id="progress-fill"></div></div>
+    <div id="quiz-screen" class="d-none fade-in">
+      <div id="quiz" class="mt-4"></div>
+      <button onclick="prevQuestion()" id="prevBtn" class="btn btn-secondary mt-2 d-none">⬅上一題</button>
+      <div class="progress mt-3">
+        <div id="progress-fill" class="progress-bar bg-success" style="width: 0%"></div>
+      </div>
     </div>
 
     <!-- 結果區 -->
-    <div id="result" class="hidden"></div>
+    <div id="result" class="border border-2 border-primary rounded p-4 text-center mt-4 bg-light d-none fade-in"></div>
   </div>
+
+  <!-- Bootstrap JS（包含 Popper）-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="ques-data.js"></script>
   <script src="app.js"></script>
 </body>
