@@ -1,166 +1,23 @@
-/* === Reset + Base === */
 body {
   font-family: 'Noto Sans TC', sans-serif;
-  margin: 0;
-  padding: 1.5rem 1rem;
-  font-family: "Noto Sans TC", "Segoe UI", sans-serif;
   background: #fdfaf5;
-  color: #333;
-  line-height: 1.6;
-}
-
-h1, #result strong {
-  font-family: 'Cinzel Decorative', serif;
-  letter-spacing: 1px;
-}
-
-h1 {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 1.2rem;
-  color: #4b0082;
-  animation: floatIn 1.2s ease-out forwards;
-  opacity: 0;
-}
-
-p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
-/* === Buttons === */
-button {
-  display: block;
-  width: 100%;
-  font-size: 1rem;
-  padding: 1rem;
-  margin: 0.5rem 0;
-  background-color: #ffffff;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  text-align: left;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: background 0.2s ease, border-color 0.2s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-button:hover {
-  background-color: #f3edff;
-  border-color: #6a1b9a;
-  color: #4b0082;
-}
-
-button:active {
-  transform: scale(0.98);
-}
-
-button:active::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%; left: 50%;
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: flash 0.4s ease-out;
-}
-
-button:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* === Question Box === */
-.question-box {
-  background: #fffefc;
-  border-radius: 12px;
-  padding: 1rem;
-  border: 1px solid #e0d8d8;
-  margin-bottom: 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.04);
-}
-
-/* === Progress Bar === */
-#progress-bar {
-  background-color: #eee;
-  height: 14px;
-  border-radius: 7px;
-  overflow: hidden;
-  margin-top: 1.2rem;
-}
-
-#progress-fill {
-  background: linear-gradient(to right,  #a18cd1, #fbc2eb);
-  height: 100%;
-  transition: width 0.6s ease-out;
-}
-
-/* === Result === */
-#result {
-  background: #f0f4ff;
-  border: 2px dashed #4b0082;
-  border-radius: 10px;
   padding: 2rem 1rem;
-  color: #4b0082;
-  text-align: center;
 }
 
-#result strong {
-  font-size: 1.3rem;
-  display: inline-block;
-  margin: 0.5rem 0;
+h1, .result-major {
+  font-family: 'Cinzel Decorative', serif;
 }
 
-/* === Previous Button === */
-#prevBtn {
-  background-color: #fafafa;
-  border: 2px solid #bbb;
-  color: #333;
-  width: auto;
-  font-size: 0.9rem;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  margin-top: 0.5rem;
+.fade-in {
+  animation: fadeIn 0.8s ease-out both;
 }
 
-/* === Hide element === */
-.hidden {
-  display: none;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* === Responsive tweaks for larger devices (optional) === */
-@media (min-width: 600px) {
-  body {
-    padding: 2rem;
-  }
-
-  button {
-    font-size: 1.1rem;
-    padding: 1rem 1.2rem;
-  }
-
-  #result strong {
-    font-size: 1.4rem;
-  }
-}
-
-/* === Animation === */
-@keyframes floatIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px) scale(0.9) rotate(-5deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
-  }
-}
-
-@keyframes flash {
-  0% { opacity: 1; transform: scale(0.3); }
-  100% { opacity: 0; transform: scale(1.2); }
+.progress {
+  height: 16px;
+  margin-top: 1rem;
 }
